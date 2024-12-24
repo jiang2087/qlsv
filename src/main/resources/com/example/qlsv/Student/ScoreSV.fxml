@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="30.0" layoutY="33.0" text="Xem kết quả học tập">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="345.0" layoutY="97.0" text="Điểm tích lũy:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="545.0" layoutY="97.0" text="Xếp loại:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="442.0" layoutY="99.0" text="NaN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="610.0" layoutY="99.0" text="NaN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView layoutY="144.0" prefHeight="357.0" prefWidth="802.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="STT" />
+          <TableColumn prefWidth="95.9999771118164" text="Mã môn" />
+            <TableColumn prefWidth="111.20001220703125" text="Mã lớp" />
+            <TableColumn prefWidth="91.20001220703125" text="TX1" />
+            <TableColumn prefWidth="103.20001220703125" text="TX2" />
+            <TableColumn prefWidth="95.19992065429688" text="Giữa kỳ" />
+            <TableColumn prefWidth="116.79998779296875" text="Cuối kỳ" />
+            <TableColumn prefWidth="115.2000732421875" text="Tích lũy" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

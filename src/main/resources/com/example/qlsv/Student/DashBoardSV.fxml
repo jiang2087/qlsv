@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.DashBoardSV">
+   <children>
+      <Pane layoutY="-3.0" prefHeight="600.0" prefWidth="237.0" style="-fx-background-color: #66ffb3;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="154.0" layoutX="38.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Icon/student.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="25.0" layoutY="14.0" text="Trang chủ">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Pane layoutX="14.0" layoutY="199.0" prefHeight="67.0" prefWidth="202.0" style="-fx-background-color: #66ffb3;">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="39.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../Icon/students.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="lblProfile" layoutX="67.0" layoutY="26.0" onMouseClicked="#profileClick" text="Thông tin cá nhân">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="266.0" prefHeight="67.0" prefWidth="202.0" style="-fx-background-color: #66ffb3;">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="39.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../Icon/classroom.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="lblClasses" layoutX="67.0" layoutY="26.0" onMouseClicked="#classesClick" text="Lớp học">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="15.0" layoutY="347.0" prefHeight="67.0" prefWidth="202.0" style="-fx-background-color: #66ffb3;">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="39.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../Icon/score_board.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="lblScoreResult" layoutX="67.0" layoutY="26.0" onMouseClicked="#scoreResultClick" text="Kết quả học tập">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="519.0" prefHeight="67.0" prefWidth="202.0" style="-fx-background-color: #66ffb3;">
+               <children>
+                  <ImageView fitHeight="49.0" fitWidth="39.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../Icon/logout.png" />
+                     </image>
+                  </ImageView>
+                  <Label id="lblLogout" layoutX="67.0" layoutY="26.0" onMouseClicked="#LogoutClick" text="Đăng xuất">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="235.0" prefHeight="100.0" prefWidth="801.0" style="-fx-background-color: #b3ffd9;">
+         <children>
+            <ImageView fitHeight="181.0" fitWidth="83.0" layoutX="179.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Icon/student.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="285.0" layoutY="14.0" text="Phần mềm quản lý phía sinh viên">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="394.0" layoutY="51.0" text="Nhóm 2">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane id="panelContainer" layoutX="234.0" layoutY="99.0" prefHeight="500.0" prefWidth="802.0" />
+   </children>
+</AnchorPane>

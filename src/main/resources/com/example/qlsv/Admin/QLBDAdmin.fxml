@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.QLBDAdminController">
+   <children>
+      <Label layoutX="252.0" layoutY="15.0" text="Quản lý bảng điểm">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
+      </Label>
+      <TableView layoutX="13.0" layoutY="95.0" prefHeight="390.0" prefWidth="774.0">
+         <columns>
+            <TableColumn prefWidth="63.199984550476074" text="STT" />
+            <TableColumn prefWidth="90.4000244140625" text="Mã lớp" />
+            <TableColumn prefWidth="75.199951171875" text="Tên lớp" />
+            <TableColumn prefWidth="115.199951171875" text="Địa điểm" />
+            <TableColumn minWidth="0.0" prefWidth="98.4000244140625" text="Thời gian học" />
+            <TableColumn minWidth="0.0" prefWidth="175.20001220703125" text="Mã môn học" />
+            <TableColumn minWidth="0.0" prefWidth="150.39996337890625" text="Thêm điểm" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
