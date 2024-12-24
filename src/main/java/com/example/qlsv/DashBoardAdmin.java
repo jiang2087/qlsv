@@ -2,11 +2,13 @@ package com.example.qlsv;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -17,7 +19,10 @@ public class DashBoardAdmin {
     public Pane panelContainer;
     @FXML
     public Label lblProfile;
-
+    private Stage stage;
+    public void setStage(Stage stage){
+        this.stage = stage;
+    }
     public void openForm(FXMLLoader Loader){
         AnchorPane form = null;
         try {
@@ -50,6 +55,18 @@ public class DashBoardAdmin {
     }
     @FXML
     public void LogoutClick(MouseEvent mouseEvent) {
+        Stage newStage = new Stage();
+        FXMLLoader login = new FXMLLoader(getClass().getResource("/com/example/qlsv/Login.fxml"));
+        try {
+            Scene newScene = new Scene(login.load(), 526, 387);
+            newStage.setScene(newScene);
+            newStage.setTitle("Trang đăng nhập");
+            newStage.show();
+            newStage.setResizable(false);
+            stage.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     @FXML
     public void manageScore(MouseEvent mouseEvent) {

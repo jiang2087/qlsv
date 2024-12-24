@@ -3,6 +3,7 @@ package com.example.qlsv;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,9 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
         stage.setTitle("Ứng dụng quản lý sinh viên");
         stage.setScene(scene);
+        DashBoardAdmin admin = fxmlLoader.getController();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/message.png")));
+        admin.setStage(stage);
         stage.setResizable(false);
         stage.show();
     }
