@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -61,8 +62,9 @@ public class DashBoardAdmin {
             Scene newScene = new Scene(login.load(), 526, 387);
             newStage.setScene(newScene);
             newStage.setTitle("Trang đăng nhập");
-            newStage.show();
             newStage.setResizable(false);
+            newStage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/student_3.png")));
+            newStage.show();
             stage.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

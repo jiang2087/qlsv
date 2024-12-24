@@ -9,29 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.QLTTAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.QLTTAdminController">
    <children>
       <Label layoutX="32.0" layoutY="24.0" text="Xem thông tin Sinh Viên">
          <font>
             <Font name="Arial Bold" size="23.0" />
          </font>
       </Label>
-      <ComboBox id="comBoxMaLop" layoutX="32.0" layoutY="111.0" prefWidth="150.0" />
+      <ComboBox fx:id="comBoxMaLop" layoutX="32.0" layoutY="111.0" prefWidth="150.0" />
       <Label layoutX="32.0" layoutY="85.0" text="Mã lớp">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </Label>
-      <TextField id="txtName" layoutX="483.0" layoutY="111.0" />
-      <Button layoutX="659.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#searchByNameClick" text="Tìm kiếm" />
+      <TextField fx:id="txtName" layoutX="483.0" layoutY="111.0" />
+      <Button fx:id="searchByName" layoutX="659.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#searchByNameClick" text="Tìm kiếm" />
       <Label layoutX="483.0" layoutY="85.0" text="Tên sinh viên">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </Label>
-      <TableView layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
+      <TableView fx:id="tblTTSV" layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
         <columns>
           <TableColumn prefWidth="41.60000991821289" text="STT" />
           <TableColumn prefWidth="111.20004653930664" text="Mã sinh viên" />
@@ -44,5 +42,6 @@
             <TableColumn prefWidth="112.79998779296875" text="Email" />
         </columns>
       </TableView>
+      <Button fx:id="searchByClassId" layoutX="205.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#clickSearchByClassBtnCLick" prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
    </children>
 </AnchorPane>

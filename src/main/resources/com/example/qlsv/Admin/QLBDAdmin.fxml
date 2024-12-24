@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -24,5 +25,6 @@
             <TableColumn minWidth="0.0" prefWidth="150.39996337890625" text="Thêm điểm" />
          </columns>
       </TableView>
+      <Button id="testBtn" layoutX="592.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#testBtnClick" prefHeight="26.0" prefWidth="74.0" text="Test" />
    </children>
 </AnchorPane>

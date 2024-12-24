@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Ứng dụng quản lý sinh viên");
         stage.setScene(scene);
         DashBoardAdmin admin = fxmlLoader.getController();
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/message.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/student_3.png")));
         admin.setStage(stage);
         stage.setResizable(false);
         stage.show();
