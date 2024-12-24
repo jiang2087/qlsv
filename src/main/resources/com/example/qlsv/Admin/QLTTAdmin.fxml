@@ -31,15 +31,15 @@
       </Label>
       <TableView fx:id="tblTTSV" layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
         <columns>
-          <TableColumn prefWidth="41.60000991821289" text="STT" />
-          <TableColumn prefWidth="111.20004653930664" text="Mã sinh viên" />
-            <TableColumn prefWidth="162.40000915527344" text="Họ và tên" />
-            <TableColumn prefWidth="66.39996337890625" text="Giới tính" />
-            <TableColumn prefWidth="76.79998779296875" text="Ngày sinh" />
-            <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-            <TableColumn prefWidth="78.4000244140625" text="Địa chỉ" />
-            <TableColumn prefWidth="102.39996337890625" text="Số điện thoại" />
-            <TableColumn prefWidth="112.79998779296875" text="Email" />
+          <TableColumn  prefWidth="41.60000991821289" text="STT" />
+          <TableColumn fx:id="maSvColumn" prefWidth="111.20004653930664" text="Mã sinh viên" />
+            <TableColumn fx:id="hoTenColumn" prefWidth="162.40000915527344" text="Họ và tên" />
+            <TableColumn fx:id="gioiTinhColumn" prefWidth="66.39996337890625" text="Giới tính" />
+            <TableColumn fx:id="ngaySinhColumn" prefWidth="76.79998779296875" text="Ngày sinh" />
+            <TableColumn  minWidth="0.0" prefWidth="0.0" text="C2" />
+            <TableColumn fx:id="diachiColumn" prefWidth="78.4000244140625" text="Địa chỉ" />
+            <TableColumn fx:id="soDienThoaiColumn" prefWidth="102.39996337890625" text="Số điện thoại" />
+            <TableColumn fx:id="emailColumn" prefWidth="112.79998779296875" text="Email" />
         </columns>
       </TableView>
       <Button fx:id="searchByClassId" layoutX="205.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#clickSearchByClassBtnCLick" prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
