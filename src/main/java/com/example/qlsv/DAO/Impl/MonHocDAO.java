@@ -21,17 +21,29 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
 
     @Override
     public MonHoc findOne(String maMH) {
-        return null;
+        String query = """
+                SELECT maMH, tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy FROM monhoc
+                """;
+        List<MonHoc> list = query(query, new MonHocMapper());
+        return list.isEmpty() ? null : list.getFirst();
     }
 
     @Override
     public void updateMH(MonHoc MH) {
-
+        String query = """
+                UPDATE tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy 
+                FROM monhoc WHERE maMH = ?
+                """;
+        update(query, MH.getTenMonHoc(), MH.getSoTinChi(), MH.getTinChiTH(), MH.getTinChiLT(), MH.getTinChiBTL(),
+                MH.getHocKy(), MH.getMaMH());
     }
 
     @Override
     public void deleteMH(String maMH) {
-
+        String query = """
+                DELETE FROM monhoc WHERE maMH = ?;
+                """;
+        delete(query, maMH);
     }
 
 
