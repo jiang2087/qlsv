@@ -9,4 +9,5 @@ public interface ILopDAO {
     Lop findOne(String maLop);
     void updateLop(Lop lop);
     void deleteLop(String maLop);
+    void addLop(Lop lop);
 }

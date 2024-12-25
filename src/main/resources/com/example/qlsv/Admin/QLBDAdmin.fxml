@@ -14,17 +14,17 @@
             <Font name="Arial Bold" size="23.0" />
          </font>
       </Label>
-      <TableView layoutX="13.0" layoutY="95.0" prefHeight="390.0" prefWidth="774.0">
+      <TableView fx:id="tblBD" layoutX="13.0" layoutY="95.0" prefHeight="390.0" prefWidth="774.0">
          <columns>
-            <TableColumn prefWidth="63.199984550476074" text="STT" />
-            <TableColumn prefWidth="90.4000244140625" text="Mã lớp" />
-            <TableColumn prefWidth="75.199951171875" text="Tên lớp" />
-            <TableColumn prefWidth="115.199951171875" text="Địa điểm" />
-            <TableColumn minWidth="0.0" prefWidth="98.4000244140625" text="Thời gian học" />
-            <TableColumn minWidth="0.0" prefWidth="175.20001220703125" text="Mã môn học" />
-            <TableColumn minWidth="0.0" prefWidth="150.39996337890625" text="Thêm điểm" />
+            <TableColumn fx:id="colSTT" prefWidth="63.199984550476074" text="STT" />
+            <TableColumn fx:id="colMaLop" prefWidth="90.4000244140625" text="Mã lớp" />
+            <TableColumn fx:id="colTenLop" prefWidth="75.199951171875" text="Tên lớp" />
+            <TableColumn fx:id="colDiaDIem" prefWidth="115.199951171875" text="Địa điểm" />
+            <TableColumn fx:id="colThoiGian" minWidth="0.0" prefWidth="98.4000244140625" text="Thời gian học" />
+            <TableColumn fx:id="colMaMH" minWidth="0.0" prefWidth="175.20001220703125" text="Mã môn học" />
+            <TableColumn fx:id="themDiemBtn" minWidth="0.0" prefWidth="150.39996337890625" text="Thêm điểm" />
          </columns>
       </TableView>
-      <Button id="testBtn" layoutX="592.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#testBtnClick" prefHeight="26.0" prefWidth="74.0" text="Test" />
+      <Button fx:id="testBtn" layoutX="592.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#testBtnClick" prefHeight="26.0" prefWidth="74.0" text="Test" />
    </children>
 </AnchorPane>

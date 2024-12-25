@@ -28,9 +28,9 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="25.0" layoutY="136.0" prefHeight="26.0" prefWidth="282.0" />
-            <TextField layoutX="25.0" layoutY="226.0" prefHeight="26.0" prefWidth="282.0" />
-            <Button layoutX="96.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Đăng nhập" />
+            <TextField fx:id="usernameField" layoutX="25.0" layoutY="136.0" prefHeight="26.0" prefWidth="282.0" />
+            <TextField fx:id="passwordField" layoutX="25.0" layoutY="226.0" prefHeight="26.0" prefWidth="282.0" />
+            <Button fx:id="loginButton" layoutX="96.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Đăng nhập" />
             <CheckBox layoutX="24.0" layoutY="264.0" mnemonicParsing="false" text="hiển thị mật khẩu" />
          </children>
       </AnchorPane>

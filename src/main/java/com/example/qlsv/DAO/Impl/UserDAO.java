@@ -33,10 +33,10 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
     @Override
     public List<User> findByName(String hoTen) {
         String query = """
-                    SELECT maSV, diaChi, soDienThoai, taiKhoan, matKhau, hoTen, hinhAnh, quyen, gioiTinh, ngaySinh, email
-                    FROM users WHERE hoTen like '%?%'
-                """;
-        return query(query, new UserMapper(), hoTen);
+                SELECT maSV, diaChi, soDienThoai, taiKhoan, matKhau, hoTen, hinhAnh, quyen, gioiTinh, ngaySinh, email
+                FROM users WHERE hoTen LIKE ?
+            """;
+        return query(query, new UserMapper(), "%" + hoTen + "%"); // Truyền giá trị tham số vào
     }
 
     @Override
@@ -55,6 +55,27 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                     DELETE FROM users WHERE maSV=?
                 """;
         delete(query, maSV);
+    }
+
+    @Override
+    public List<User> findByClassId(String maLop) {
+        String query = """
+                    SELECT users.maSV, diaChi, soDienThoai, taiKhoan, matKhau, hoTen, hinhAnh, quyen, gioiTinh, ngaySinh, email FROM users
+                    INNER JOIN users_lop AS ul ON ul.maSV = users.maSV INNER JOIN lop as l
+                    ON ul.maLop = l.maLop WHERE l.maLop = ?;
+                """;
+        return query(query, new UserMapper(), maLop);
+    }
+
+    @Override
+    public User login(String userName, String password) {
+        String query = """
+                SELECT maSV, diaChi, soDienThoai, taiKhoan, matKhau, hoTen, hinhAnh, quyen, gioiTinh, ngaySinh, email 
+                FROM users 
+                WHERE taiKhoan = ? AND matKhau = ?;
+            """;
+        List<User> list = query(query, new UserMapper(), userName, password);
+        return list.isEmpty() ? null : list.get(0);
     }
 
     public static void main(String[] args) {

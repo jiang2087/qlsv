@@ -10,4 +10,6 @@ public interface IUserDAO {
     List<User> findByName(String hoTen);
     void updateSV(User user);
     void deleteSV(String maSV);
+    List<User> findByClassId(String maLop);
+    User login(String userName, String password);
 }

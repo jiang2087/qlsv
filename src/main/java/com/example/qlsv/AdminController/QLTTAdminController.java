@@ -26,6 +26,12 @@ import java.util.ResourceBundle;
 
 public class QLTTAdminController{
     @FXML
+    private Button searchByName;
+
+    @FXML
+    private Button searchByMaLop;
+
+    @FXML
     private ComboBox<String> comBoxMaLop;
     @FXML
     private TextField txtName;
@@ -76,21 +82,43 @@ public class QLTTAdminController{
         userList.addAll(dao.findAll());
         // Gán danh sách vào TableView
         tblTTSV.setItems(userList);
+
+        searchByMaLop.setOnAction(event -> searchByClassIdClick());
+        searchByName.setOnAction(event -> searchByNameIdClick());
     }
-//    private void searchByClassIdClick() {
-//        // Lấy mã lớp từ ComboBox
-//        String maLop = comBoxMaLop.getValue();
-//        if (maLop != null && !maLop.isEmpty()) {
-//            // Tìm kiếm theo mã lớp
-//            IUserDAO dao = new UserDAO();
-//            List<User> result = dao.find(maLop);  // Giả sử findByClassId là phương thức tìm kiếm theo mã lớp
-//            userList = FXCollections.observableArrayList(result);
-//            tblTTSV.setItems(userList);
-//        } else {
-//            // Nếu không có mã lớp, có thể đưa thông báo hoặc để trống
-//            System.out.println("Vui lòng chọn mã lớp.");
-//        }
-//    }
+    private void searchByClassIdClick() {
+
+        // Lấy mã lớp từ ComboBox
+        String maLop = comBoxMaLop.getValue();
+        if (maLop != null && !maLop.isEmpty()) {
+            // Tìm kiếm theo mã lớp
+            IUserDAO dao = new UserDAO();
+            List<User> result = dao.findByClassId(maLop);  // Giả sử findByClassId là phương thức tìm kiếm theo mã lớp
+            userList = FXCollections.observableArrayList(result);
+            tblTTSV.setItems(userList);
+        } else {
+            // Nếu không có mã lớp, có thể đưa thông báo hoặc để trống
+            System.out.println("Vui lòng chọn mã lớp.");
+        }
+    }
+
+    private void searchByNameIdClick() {
+        // Lấy tên từ TextField
+        String name = txtName.getText();
+        if (name != null && !name.isEmpty()) {
+            System.out.println(name);
+            // Tìm kiếm theo tên
+            IUserDAO dao = new UserDAO();
+            List<User> result = dao.findByName(name);  // Tìm kiếm theo tên
+            userList = FXCollections.observableArrayList(result);
+            tblTTSV.setItems(userList);
+        } else {
+            // Nếu không có tên, có thể đưa thông báo hoặc để trống
+            System.out.println("Vui lòng nhập tên sinh viên.");
+        }
+    }
+
+
 
 
 
