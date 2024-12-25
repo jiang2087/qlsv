@@ -31,11 +31,12 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
     @Override
     public void updateMH(MonHoc MH) {
         String query = """
-                UPDATE tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy 
-                FROM monhoc WHERE maMH = ?
-                """;
-        update(query, MH.getTenMonHoc(), MH.getSoTinChi(), MH.getTinChiTH(), MH.getTinChiLT(), MH.getTinChiBTL(),
-                MH.getHocKy(), MH.getMaMH());
+            UPDATE monhoc
+            SET tenMonHoc = ?, soTinChi = ?, tinChiTH = ?, tinChiLT = ?, tinChiBTL = ?, hocKy = ?
+            WHERE maMH = ?
+            """;
+        update(query, MH.getTenMonHoc(), MH.getSoTinChi(), MH.getTinChiTH(), MH.getTinChiLT(),
+                MH.getTinChiBTL(), MH.getHocKy(), MH.getMaMH());
     }
 
     @Override

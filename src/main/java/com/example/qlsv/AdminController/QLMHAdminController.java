@@ -42,6 +42,9 @@ public class QLMHAdminController {
     @FXML
     private Button suaButton;
 
+    @FXML
+    private Button xoaButton;
+
     private ObservableList<MonHoc> monHocList;
 
 
@@ -80,6 +83,7 @@ public class QLMHAdminController {
 
         themButton.setOnAction(event -> themMonHoc());
         suaButton.setOnAction(event -> suaMonHoc());
+        xoaButton.setOnAction(event -> xoaMonHoc());
     }
 
     private void themMonHoc() {
@@ -142,4 +146,25 @@ public class QLMHAdminController {
         monHocList.addAll(dao.findAll());
         monHocTable.setItems(monHocList);
     }
+
+    private void xoaMonHoc() {
+        // Lấy mã môn học từ trường nhập liệu
+        String maMH = maMHField.getText();  // Giả sử maMHField là TextField chứa mã môn học
+
+
+        // Tạo đối tượng MonHocDAO để gọi phương thức xóa
+        MonHocDAO dao = new MonHocDAO();
+
+        // Gọi phương thức xóa từ DAO để xóa môn học với mã môn học đã lấy
+        dao.deleteMH(maMH);
+
+        // Làm mới danh sách môn học và cập nhật lại TableView
+        monHocList.clear();
+        monHocList.addAll(dao.findAll());
+        monHocTable.setItems(monHocList);
+
+        // Thông báo thành công
+
+    }
+
 }
