@@ -10,7 +10,7 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
     @Override
     public List<Lop> findAll() {
         String query = """
-                   SELECT maLop, tenLop, hocKy, tenGiangVien, diaDiem, thoiGianHoc, maMH
+                   SELECT maLop, tenLop, tenGiangVien, diaDiem, thoiGianHoc, maMH
                    FROM lop;
                 """;
         return query(query, new LopMapper());
@@ -19,7 +19,7 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
     @Override
     public Lop findOne(String maLop) {
         String query = """
-                   SELECT maLop, tenLop, hocKy, tenGiangVien, diaDiem, thoiGianHoc, maMH
+                   SELECT maLop, tenLop,  tenGiangVien, diaDiem, thoiGianHoc, maMH
                    FROM lop WHERE maLop=?;
                 """;
         List<Lop> list =  query(query, new LopMapper(), maLop);

@@ -29,6 +29,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
         return list.isEmpty() ? null : list.get(0);
     }
 
+
     @Override
     public List<User> findByName(String hoTen) {
         String query = """

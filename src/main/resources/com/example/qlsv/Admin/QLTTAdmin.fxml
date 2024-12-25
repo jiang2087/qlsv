@@ -23,7 +23,7 @@
          </font>
       </Label>
       <TextField fx:id="txtName" layoutX="483.0" layoutY="111.0" />
-      <Button fx:id="searchByName" layoutX="659.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#searchByNameClick" text="Tìm kiếm" />
+      <Button fx:id="searchByName" layoutX="659.0" layoutY="111.0" mnemonicParsing="false"  text="Tìm kiếm" />
       <Label layoutX="483.0" layoutY="85.0" text="Tên sinh viên">
          <font>
             <Font name="Arial" size="17.0" />
@@ -31,7 +31,7 @@
       </Label>
       <TableView fx:id="tblTTSV" layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
         <columns>
-          <TableColumn  prefWidth="41.60000991821289" text="STT" />
+          <TableColumn fx:id="sttColumn" prefWidth="41.60000991821289" text="STT" />
           <TableColumn fx:id="maSvColumn" prefWidth="111.20004653930664" text="Mã sinh viên" />
             <TableColumn fx:id="hoTenColumn" prefWidth="162.40000915527344" text="Họ và tên" />
             <TableColumn fx:id="gioiTinhColumn" prefWidth="66.39996337890625" text="Giới tính" />
@@ -42,6 +42,6 @@
             <TableColumn fx:id="emailColumn" prefWidth="112.79998779296875" text="Email" />
         </columns>
       </TableView>
-      <Button fx:id="searchByClassId" layoutX="205.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#clickSearchByClassBtnCLick" prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
+      <Button fx:id="searchByClassId" layoutX="205.0" layoutY="111.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
    </children>
 </AnchorPane>
