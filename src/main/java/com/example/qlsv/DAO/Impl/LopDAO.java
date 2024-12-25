@@ -23,7 +23,7 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
                    FROM lop WHERE maLop=?;
                 """;
         List<Lop> list =  query(query, new LopMapper(), maLop);
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override

@@ -39,8 +39,11 @@ public class QLMHAdminController {
     private TableColumn<MonHoc, Integer> tinChiBTLColumn;
     @FXML
     private TableColumn<MonHoc, Integer> hocKyColumn;
+    @FXML
+    private Button suaButton;
 
     private ObservableList<MonHoc> monHocList;
+
 
     @FXML
     private void initialize() {
@@ -76,6 +79,7 @@ public class QLMHAdminController {
 
 
         themButton.setOnAction(event -> themMonHoc());
+        suaButton.setOnAction(event -> suaMonHoc());
     }
 
     private void themMonHoc() {
@@ -104,6 +108,38 @@ public class QLMHAdminController {
         monHocList.addAll(dao.findAll()); // Cập nhật lại danh sách
 
         // Cập nhật lại TableView để hiển thị dữ liệu mới
+        monHocTable.setItems(monHocList);
+
+    }
+
+    private void suaMonHoc() {
+        // Lấy dữ liệu từ các trường nhập liệu
+        String maMH = maMHField.getText();
+        String tenMH = tenMHField.getText();
+        int soTinChi = Integer.parseInt(soTinChiField.getText());
+        int tinChiTH = Integer.parseInt(tinChiTHField.getText());
+        int tinChiLT = Integer.parseInt(tinChiLTField.getText());
+        int tinChiBTL = Integer.parseInt(tinChiBTLField.getText());
+        int hocKy = Integer.parseInt(hocKyField.getText());
+
+        // Tạo đối tượng MonHoc mới từ dữ liệu nhập vào
+        MonHoc monHoc = MonHoc.builder()
+                .maMH(maMH)
+                .tenMonHoc(tenMH)
+                .soTinChi(soTinChi)
+                .tinChiTH(tinChiTH)
+                .tinChiLT(tinChiLT)
+                .tinChiBTL(tinChiBTL)
+                .hocKy(hocKy)
+                .build();
+
+        // Cập nhật môn học trong cơ sở dữ liệu
+        MonHocDAO dao = new MonHocDAO();
+        dao.updateMH(monHoc); // Giả sử bạn có phương thức updateMH để cập nhật môn học trong cơ sở dữ liệu
+
+        // Làm mới danh sách monHocList và cập nhật lại TableView
+        monHocList.clear();
+        monHocList.addAll(dao.findAll());
         monHocTable.setItems(monHocList);
     }
 }

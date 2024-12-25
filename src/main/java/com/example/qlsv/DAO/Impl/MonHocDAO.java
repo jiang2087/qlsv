@@ -25,7 +25,7 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
                 SELECT maMH, tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy FROM monhoc
                 """;
         List<MonHoc> list = query(query, new MonHocMapper());
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override

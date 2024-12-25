@@ -36,7 +36,7 @@
          </children>
       </Pane>
       <Button fx:id="themButton" layoutX="340.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="Thêm" />
-      <Button layoutX="242.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="sửa" />
+      <Button fx:id="suaButton" layoutX="242.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="sửa" />
       <Button layoutX="454.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="Xóa" />
       <TableView fx:id="monHocTable" layoutX="12.0" layoutY="277.0" prefHeight="220.0" prefWidth="778.0">
         <columns>
