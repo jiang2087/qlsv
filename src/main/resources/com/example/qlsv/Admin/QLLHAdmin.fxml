@@ -22,13 +22,13 @@
       <Button layoutX="448.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#xoaBtnClick" prefHeight="26.0" prefWidth="79.0" text="Xóa" />
       <TableView fx:id="tblLop" layoutX="6.0" layoutY="268.0" prefHeight="220.0" prefWidth="778.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="STT" />
-            <TableColumn prefWidth="74.39996337890625" text="Mã lớp học" />
-            <TableColumn prefWidth="102.39994812011719" text="Tên lớp" />
-            <TableColumn prefWidth="184.00006103515625" text="Tên giảng viên" />
-            <TableColumn prefWidth="162.39996337890625" text="Địa điểm" />
-            <TableColumn prefWidth="91.20001220703125" text="Thời gian học" />
-            <TableColumn prefWidth="91.99993896484375" text="Mã môn học" />
+            <TableColumn fx:id="colSTT" prefWidth="75.0" text="STT" />
+            <TableColumn fx:id="colMaLop" prefWidth="74.39996337890625" text="Mã lớp học" />
+            <TableColumn fx:id="colTenLop" prefWidth="102.39994812011719" text="Tên lớp" />
+            <TableColumn fx:id="colTenGV" prefWidth="184.00006103515625" text="Tên giảng viên" />
+            <TableColumn fx:id="colDiaDiem" prefWidth="162.39996337890625" text="Địa điểm" />
+            <TableColumn fx:id="colThoiGian" prefWidth="91.20001220703125" text="Thời gian học" />
+            <TableColumn fx:id="colMaMH" prefWidth="91.99993896484375" text="Mã môn học" />
          </columns>
       </TableView>
       <Pane layoutX="12.0" layoutY="63.0" prefHeight="122.0" prefWidth="778.0">

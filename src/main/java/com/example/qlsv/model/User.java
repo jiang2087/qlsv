@@ -1,5 +1,6 @@
 package com.example.qlsv.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +24,5 @@ public class User {
     private Date ngaySinh;
     private String email;
     private String matKhau;
+
 }

@@ -24,7 +24,7 @@ public class DiemDAO extends AbstractDAO<Diem> implements IDiemDAO {
                 WHERE maLop = ? and maSV = ?;
                 """;
         List<Diem> list = query(query, new DiemMapper(), ClassId, StudentId);
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     public static void main(String[] args) {

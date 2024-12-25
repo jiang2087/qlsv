@@ -1,5 +1,6 @@
 package com.example.qlsv.AdminController;
 
+
 import com.example.qlsv.model.User;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -31,6 +32,8 @@ public class QLTTAdminController implements Initializable {
     private TableColumn<User, String> soDienThoaiColumn;
     @FXML
     private TableColumn<User, String> emailColumn;
+
+
 
 
 

@@ -4,6 +4,8 @@ import com.example.qlsv.DAO.IMonHoc;
 import com.example.qlsv.Mapper.impl.MonHocMapper;
 import com.example.qlsv.model.MonHoc;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
@@ -23,7 +25,7 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
                 SELECT maMH, tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy FROM monhoc
                 """;
         List<MonHoc> list = query(query, new MonHocMapper());
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override
@@ -44,6 +46,7 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
         delete(query, maMH);
     }
 
+
     @Override
     public void addMH(MonHoc MH) {
         String query = """
@@ -54,11 +57,6 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
                 MH.getTinChiBTL(), MH.getHocKy());
     }
 
-    public static void main(String[] args) {
-        MonHoc a = MonHoc.builder()
-                .hocKy(1).tenMonHoc("sadfefv").maMH("JVWEB").tinChiBTL(3)
-                .build();
-        IMonHoc dao = new MonHocDAO();
-        dao.addMH(a);
-    }
+
+
 }

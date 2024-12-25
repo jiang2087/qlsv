@@ -47,7 +47,6 @@ public class DashBoardAdmin {
     public void manageSubject(MouseEvent mouseEvent) {
         FXMLLoader qltt = new FXMLLoader(getClass().getResource("/com/example/qlsv/Admin/QLMHAdmin.fxml"));
         openForm(qltt);
-        System.out.println(lblProfile.getText());
     }
     @FXML
     public void manageClasses(MouseEvent mouseEvent) {

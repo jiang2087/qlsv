@@ -23,14 +23,14 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
                    FROM lop WHERE maLop=?;
                 """;
         List<Lop> list =  query(query, new LopMapper(), maLop);
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override
     public void updateLop(Lop lop) {
         String query = """
-                   UPDATE tenLop=?, tenGiangVien=?, diaDiem=?, thoiGianHoc=?, maMH=?
-                   FROM lop WHERE maLop=?;
+                   UPDATE lop SET tenLop=?, tenGiangVien=?, diaDiem=?, thoiGianHoc=?, maMH=?
+                   WHERE maLop=?;
                 """;
        update(query, lop.getTenLop(), lop.getTenGiangVien(), lop.getDiaDiem(), lop.getThoiGianHoc(),
                lop.getMaMH(), lop.getMaLop());
@@ -48,7 +48,7 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
     public void addLop(Lop lop) {
         String query = """
                     INSERT INTO lop(maLop, tenLop, tenGiangVien, diaDiem, thoiGianHoc, maMH) VALUES
-                    (?,?,?,?,?,?,?);
+                    (?,?,?,?,?,?);
                 """;
         insert(query, lop.getMaLop(), lop.getTenLop(), lop.getTenGiangVien(), lop.getDiaDiem(), lop.getThoiGianHoc(), lop.getMaMH());
     }

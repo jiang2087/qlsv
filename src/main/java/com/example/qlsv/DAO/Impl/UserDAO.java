@@ -26,7 +26,7 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                     FROM users WHERE maSV=?
                 """;
         List<User> list = query(query, new UserMapper(), maSV);
-        return list.isEmpty() ? null : list.getFirst();
+        return list.isEmpty() ? null : list.get(0);
     }
 
     @Override
@@ -54,6 +54,16 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
                     DELETE FROM users WHERE maSV=?
                 """;
         delete(query, maSV);
+    }
+
+    @Override
+    public List<User> findByClassId(String maLop) {
+        String query = """
+                    SELECT maSV, diaChi, soDienThoai, taiKhoan, matKhau, hoTen, hinhAnh, quyen, gioiTinh, ngaySinh, email
+                    INNER JOIN users_lop AS ul ON ul.maSV = users.maSV INNER JOIN lop as l
+                    ON ul.maLop = l.maLop;
+                """;
+        return query(query, new UserMapper());
     }
 
     public static void main(String[] args) {
