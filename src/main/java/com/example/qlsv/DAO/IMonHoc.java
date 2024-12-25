@@ -9,4 +9,5 @@ public interface IMonHoc {
     MonHoc findOne(String maMH);
     void updateMH(MonHoc MH);
     void deleteMH(String maMH);
+    void addMH(MonHoc MH);
 }

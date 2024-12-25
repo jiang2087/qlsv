@@ -31,4 +31,22 @@ public class MonHocDAO extends AbstractDAO<MonHoc> implements IMonHoc {
     public void deleteMH(String maMH) {
 
     }
+
+    @Override
+    public void addMH(MonHoc MH) {
+        String query = """
+                INSERT INTO monhoc(maMH, tenMonHoc, soTinChi, tinChiTH, tinChiLT, tinChiBTL, hocKy)
+                VALUES (?,?,?,?,?,?,?);
+                """;
+        insert(query, MH.getMaMH(), MH.getTenMonHoc(), MH.getSoTinChi(), MH.getTinChiTH(), MH.getTinChiLT(),
+                MH.getTinChiBTL(), MH.getHocKy());
+    }
+
+    public static void main(String[] args) {
+        MonHoc a = MonHoc.builder()
+                .hocKy(1).tenMonHoc("sadfefv").maMH("JVWEB").tinChiBTL(3)
+                .build();
+        IMonHoc dao = new MonHocDAO();
+        dao.addMH(a);
+    }
 }
