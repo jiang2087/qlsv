@@ -1,6 +1,6 @@
 package com.example.qlsv.AdminController;
 
-import com.example.qlsv.Api.ApiUser;
+
 import com.example.qlsv.model.User;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -33,7 +33,9 @@ public class QLTTAdminController implements Initializable {
     @FXML
     private TableColumn<User, String> emailColumn;
 
-    private ApiUser apiUser = new ApiUser();
+
+
+
 
     public void searchByNameClick(MouseEvent mouseEvent) {
 
@@ -43,24 +45,7 @@ public class QLTTAdminController implements Initializable {
     }
     // Method gọi API và cập nhật TableView
     public void loadSinhVienData() {
-        try {
-            List<User> sinhVienList = apiUser.getSinhVienList();
-            ObservableList<User> sinhVienObservableList = FXCollections.observableArrayList(sinhVienList);
 
-            // Liên kết dữ liệu với các cột trong TableView
-            maSvColumn.setCellValueFactory(new PropertyValueFactory<>("maSv"));
-            hoTenColumn.setCellValueFactory(new PropertyValueFactory<>("hoTen"));
-            gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
-            ngaySinhColumn.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
-            diachiColumn.setCellValueFactory(new PropertyValueFactory<>("diachi"));
-            soDienThoaiColumn.setCellValueFactory(new PropertyValueFactory<>("soDienThoai"));
-            emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-            // Cập nhật dữ liệu vào TableView
-            tblTTSV.setItems(sinhVienObservableList);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

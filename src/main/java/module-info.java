@@ -12,6 +12,8 @@ module com.example.qlsv {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires com.fasterxml.jackson.databind;
+    requires java.sql;
+    requires lombok;
     opens com.example.qlsv.AdminController to javafx.fxml;
     exports com.example.qlsv.AdminController;
     opens com.example.qlsv to javafx.fxml;
