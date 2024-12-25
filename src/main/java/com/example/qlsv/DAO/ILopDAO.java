@@ -7,5 +7,6 @@ import java.util.List;
 public interface ILopDAO {
     List<Lop> findAll();
     Lop findOne(String maLop);
-
+    void updateLop(Lop lop);
+    void deleteLop(String maLop);
 }
