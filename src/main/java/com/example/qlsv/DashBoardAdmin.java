@@ -1,9 +1,16 @@
 package com.example.qlsv;
 
+import com.example.qlsv.DAO.ILopDAO;
+import com.example.qlsv.DAO.IMonHoc;
+import com.example.qlsv.DAO.IUserDAO;
+import com.example.qlsv.DAO.Impl.LopDAO;
+import com.example.qlsv.DAO.Impl.MonHocDAO;
+import com.example.qlsv.DAO.Impl.UserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -24,6 +31,22 @@ public class DashBoardAdmin {
     public void setStage(Stage stage){
         this.stage = stage;
     }
+    IUserDAO daoUser = new UserDAO();
+    IMonHoc daoMonHoc = new MonHocDAO();
+    ILopDAO daoLop = new LopDAO();
+
+    @FXML
+    private TextField txtSV;
+    @FXML
+    private TextField txtLop;
+    @FXML
+    private TextField txtMH;
+    @FXML
+    private void initialize(){
+        txtSV.setText(String.valueOf(daoUser.count() - 1));
+        txtLop.setText(String.valueOf(daoLop.count()));
+        txtMH.setText(String.valueOf(daoMonHoc.count()));
+    }
     public void openForm(FXMLLoader Loader){
         AnchorPane form = null;
         try {
@@ -36,6 +59,8 @@ public class DashBoardAdmin {
             panelContainer.getChildren().add(form);
         }
     }
+
+
     @FXML
     public void manageInfor(MouseEvent mouseEvent) {
         FXMLLoader qltt = new FXMLLoader(getClass().getResource("/com/example/qlsv/Admin/QLTTAdmin.fxml"));
@@ -47,7 +72,6 @@ public class DashBoardAdmin {
     public void manageSubject(MouseEvent mouseEvent) {
         FXMLLoader qltt = new FXMLLoader(getClass().getResource("/com/example/qlsv/Admin/QLMHAdmin.fxml"));
         openForm(qltt);
-        System.out.println(lblProfile.getText());
     }
     @FXML
     public void manageClasses(MouseEvent mouseEvent) {
@@ -65,6 +89,7 @@ public class DashBoardAdmin {
             newStage.setResizable(false);
             newStage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/student_3.png")));
             newStage.show();
+            Stage stage = (Stage) lblProfile.getScene().getWindow();
             stage.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

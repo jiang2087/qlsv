@@ -14,6 +14,12 @@
 <junit.version>5.10.2</junit.version>  </properties>
 
   <dependencies>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.30</version>
+          <scope>provided</scope>
+      </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
@@ -124,6 +130,13 @@
         <configuration>
           <source>23</source>
           <target>23</target>
+            <annotationProcessorPaths>
+                <path>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>1.18.36</version>
+                </path>
+            </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
