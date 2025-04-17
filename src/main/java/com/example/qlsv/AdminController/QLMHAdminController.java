@@ -8,10 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class QLMHAdminController {
     @FXML
@@ -41,6 +38,8 @@ public class QLMHAdminController {
     private TableColumn<MonHoc, Integer> hocKyColumn;
     @FXML
     private Button suaButton;
+    @FXML
+    private Button xoaButton;
 
     private ObservableList<MonHoc> monHocList;
 
@@ -61,6 +60,7 @@ public class QLMHAdminController {
         tinChiBTLColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getTinChiBTL()).asObject());
         hocKyColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getHocKy()).asObject());
 
+
         // Khi chọn một dòng trong TableView, điền dữ liệu vào các TextField
         monHocTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -80,8 +80,15 @@ public class QLMHAdminController {
 
         themButton.setOnAction(event -> themMonHoc());
         suaButton.setOnAction(event -> suaMonHoc());
+        xoaButton.setOnAction(event -> xoaMH());
     }
-
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
     private void themMonHoc() {
         String maMH = maMHField.getText();
         String tenMH = tenMHField.getText();
@@ -106,7 +113,7 @@ public class QLMHAdminController {
         // Làm mới danh sách monHocList từ cơ sở dữ liệu
         monHocList.clear();
         monHocList.addAll(dao.findAll()); // Cập nhật lại danh sách
-
+        showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Thêm môn học thành công!");
         // Cập nhật lại TableView để hiển thị dữ liệu mới
         monHocTable.setItems(monHocList);
 
@@ -132,12 +139,21 @@ public class QLMHAdminController {
                 .tinChiBTL(tinChiBTL)
                 .hocKy(hocKy)
                 .build();
-
+        showAlert(Alert.AlertType.INFORMATION, "Thông báo", "sửa môn học thành công!");
         // Cập nhật môn học trong cơ sở dữ liệu
         MonHocDAO dao = new MonHocDAO();
         dao.updateMH(monHoc); // Giả sử bạn có phương thức updateMH để cập nhật môn học trong cơ sở dữ liệu
 
         // Làm mới danh sách monHocList và cập nhật lại TableView
+        monHocList.clear();
+        monHocList.addAll(dao.findAll());
+        monHocTable.setItems(monHocList);
+    }
+    private void xoaMH(){
+        String maMH = maMHField.getText();
+        MonHocDAO dao = new MonHocDAO();
+        dao.deleteMH(maMH);
+        showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Xóa môn học thành công!");
         monHocList.clear();
         monHocList.addAll(dao.findAll());
         monHocTable.setItems(monHocList);

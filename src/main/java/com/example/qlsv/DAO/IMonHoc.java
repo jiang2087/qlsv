@@ -10,4 +10,5 @@ public interface IMonHoc {
     void updateMH(MonHoc MH);
     void deleteMH(String maMH);
     void addMH(MonHoc MH);
+    int count();
 }

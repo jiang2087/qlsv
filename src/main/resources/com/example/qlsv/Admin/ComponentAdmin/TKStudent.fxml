@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="435.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.Component.TKStudent">
+   <children>
+      <TableView fx:id="tblTK" layoutX="31.0" layoutY="96.0" prefHeight="264.0" prefWidth="712.0">
+         <columns>
+            <TableColumn fx:id="colSTT" prefWidth="63.199984550476074" text="STT" />
+            <TableColumn  fx:id="colMaSV" prefWidth="121.5999984741211" text="Mã sinh viên" />
+            <TableColumn  fx:id="colDiemTX1" prefWidth="122.39996337890625" text="Điểm TX1" />
+            <TableColumn  fx:id="colDiemTX2" minWidth="0.0" prefWidth="88.0" text="Điểm TX2" />
+            <TableColumn  fx:id="colDiemGiuaKy" minWidth="0.0" prefWidth="106.39999389648438" text="Điểm giữa kỳ" />
+            <TableColumn fx:id="colDiemCuoiKy" minWidth="0.0" prefWidth="98.4000244140625" text="Điểm cuối kỳ" />
+            <TableColumn  fx:id="colTK" minWidth="0.0" prefWidth="98.4000244140625" text="Xem thống kê" />
+         </columns>
+      </TableView>
+      <Label layoutX="221.0" layoutY="32.0" text="Mã lớp: ">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label id="lblMaLop" fx:id="lblClassId" layoutX="319.0" layoutY="33.0" text="Label">
+         <font>
+            <Font name="Arial Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

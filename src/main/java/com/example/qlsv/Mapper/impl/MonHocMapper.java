@@ -18,7 +18,6 @@ public class MonHocMapper implements IRowMappers<MonHoc> {
             ResultSetMetaData rsmd = rs.getMetaData();
             for (int i = 1; i <= rsmd.getColumnCount(); i++) {
                 String name = rsmd.getColumnName(i);
-                System.out.println(name);
                 name = name.substring(0, 1).toLowerCase() + name.substring(1);
                 setProperty(MonHoc, name, rs.getObject(name));
             }

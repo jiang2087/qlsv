@@ -1,14 +1,10 @@
 package com.example.qlsv.AdminController;
 
-import com.example.qlsv.AdminController.Component.AddScoreStudent;
-import com.example.qlsv.DAO.IDiemDAO;
+import com.example.qlsv.AdminController.Component.TKStudent;
 import com.example.qlsv.DAO.ILopDAO;
-import com.example.qlsv.DAO.Impl.DiemDAO;
 import com.example.qlsv.DAO.Impl.LopDAO;
 import com.example.qlsv.Global.SimSes;
-import com.example.qlsv.model.Diem;
 import com.example.qlsv.model.Lop;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,29 +16,28 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import javax.security.auth.callback.Callback;
 import java.io.IOException;
 
-public class QLBDAdminController {
+public class QLTKController {
+
     @FXML
-    private TableView<Lop> tblBD;
+    private TableView<Lop> tblLop;
     @FXML
     private TableColumn<Lop, String> colSTT;
     @FXML
     private TableColumn<Lop, String> colMaLop;
     @FXML
+    private TableColumn<Lop, String> colThoiGian;
+    @FXML
     private TableColumn<Lop, String> colTenLop;
     @FXML
     private TableColumn<Lop, String> colDiaDiem;
     @FXML
-    private TableColumn<Lop, String> colThoiGian;
+    private TableColumn<Lop, Void> colTK;
     @FXML
     private TableColumn<Lop, String> colMaMH;
-    @FXML
-    private TableColumn<Lop, Void> themDiemBtn;
 
     private ObservableList<Lop> lopList;
     private ILopDAO dao = new LopDAO();
@@ -57,28 +52,28 @@ public class QLBDAdminController {
         colThoiGian.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getThoiGianHoc()));
         // Đưa dữ liệu vào TableView
 
-        themDiemBtn.setCellFactory(column -> {
+        colTK.setCellFactory(column -> {
             return new TableCell<Lop, Void>() {
-                private final Button btn = new Button("Thêm");
+                private final Button btn = new Button("Xem thống kê");
                 {
-                    tblBD.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                    tblLop.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                         if (newValue != null) {
                             Lop selectedLop = (Lop) newValue;
                             btn.setOnAction(event -> {
                                 try {
                                     // Tạo cửa sổ mới
                                     Stage newStage = new Stage();
-                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/qlsv/Admin/ComponentAdmin/AddScoreStudent.fxml"));
+                                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/qlsv/Admin/ComponentAdmin/TKStudent.fxml"));
                                     Scene newScene = new Scene(loader.load(), 802, 500);
 
                                     // Lấy controller và truyền dữ liệu
-                                    AddScoreStudent controller = loader.getController();
+                                    TKStudent controller = loader.getController();
                                     controller.setLabel(selectedLop.getMaLop());
                                     SimSes.G_maLop = selectedLop.getMaLop();
 
                                     // Thiết lập và hiển thị cửa sổ
                                     newStage.setScene(newScene);
-                                    newStage.setTitle("Trang thêm điểm");
+                                    newStage.setTitle("Trang xem thống kê");
                                     newStage.setResizable(false);
                                     newStage.getIcons().add(new Image(getClass().getResourceAsStream("/Icon/student_3.png")));
                                     newStage.show();
@@ -103,8 +98,7 @@ public class QLBDAdminController {
                 }
             };
         });
-        tblBD.setItems(lopList);
+        tblLop.setItems(lopList);
     }
-
 
 }

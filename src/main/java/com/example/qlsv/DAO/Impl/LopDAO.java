@@ -52,4 +52,22 @@ public class LopDAO extends AbstractDAO<Lop> implements ILopDAO {
                 """;
         insert(query, lop.getMaLop(), lop.getTenLop(), lop.getTenGiangVien(), lop.getDiaDiem(), lop.getThoiGianHoc(), lop.getMaMH());
     }
+
+    @Override
+    public List<Lop> findByMaSV(String maSV) {
+        String query = """
+                   SELECT lop.maLop, tenLop, tenGiangVien, diaDiem, thoiGianHoc, maMH
+                   FROM lop INNER JOIN users_lop as ul on ul.maLop = lop.maLop
+                   INNER JOIN users as ur on ur.maSV = ul.maSV WHERE ur.maSV = ?;
+                """;
+        return query(query, new LopMapper(), maSV);
+    }
+
+    @Override
+    public int count() {
+        String query = """
+                    SELECT count(*) from lop;
+                """;
+        return count(query);
+    }
 }

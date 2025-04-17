@@ -10,38 +10,38 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.QLTTAdminController">
-   <children>
-      <Label layoutX="32.0" layoutY="24.0" text="Xem thông tin Sinh Viên">
-         <font>
-            <Font name="Arial Bold" size="23.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="comBoxMaLop" layoutX="32.0" layoutY="111.0" prefWidth="150.0" />
-      <Label layoutX="32.0" layoutY="85.0" text="Mã lớp">
-         <font>
-            <Font name="Arial" size="17.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtName" layoutX="483.0" layoutY="111.0" />
-      <Button fx:id="searchByName" layoutX="659.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#searchByNameClick" text="Tìm kiếm" />
-      <Label layoutX="483.0" layoutY="85.0" text="Tên sinh viên">
-         <font>
-            <Font name="Arial" size="17.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tblTTSV" layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
-        <columns>
-          <TableColumn  prefWidth="41.60000991821289" text="STT" />
-          <TableColumn fx:id="maSvColumn" prefWidth="111.20004653930664" text="Mã sinh viên" />
-            <TableColumn fx:id="hoTenColumn" prefWidth="162.40000915527344" text="Họ và tên" />
-            <TableColumn fx:id="gioiTinhColumn" prefWidth="66.39996337890625" text="Giới tính" />
-            <TableColumn fx:id="ngaySinhColumn" prefWidth="76.79998779296875" text="Ngày sinh" />
-            <TableColumn  minWidth="0.0" prefWidth="0.0" text="C2" />
-            <TableColumn fx:id="diachiColumn" prefWidth="78.4000244140625" text="Địa chỉ" />
-            <TableColumn fx:id="soDienThoaiColumn" prefWidth="102.39996337890625" text="Số điện thoại" />
-            <TableColumn fx:id="emailColumn" prefWidth="112.79998779296875" text="Email" />
-        </columns>
-      </TableView>
-      <Button fx:id="searchByClassId" layoutX="205.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#clickSearchByClassBtnCLick" prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
-   </children>
+    <children>
+        <Label layoutX="32.0" layoutY="24.0" text="Xem thông tin Sinh Viên">
+            <font>
+                <Font name="Arial Bold" size="23.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="comBoxMaLop" layoutX="32.0" layoutY="111.0" prefWidth="150.0" />
+        <Label layoutX="32.0" layoutY="85.0" text="Mã lớp">
+            <font>
+                <Font name="Arial" size="17.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="483.0" layoutY="111.0" />
+        <Button fx:id="searchByName" layoutX="659.0" layoutY="111.0" mnemonicParsing="false"  text="Tìm kiếm" />
+        <Label layoutX="483.0" layoutY="85.0" text="Tên sinh viên">
+            <font>
+                <Font name="Arial" size="17.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tblTTSV" layoutX="19.0" layoutY="150.0" prefHeight="337.0" prefWidth="748.0">
+            <columns>
+                <TableColumn fx:id="sttColumn" prefWidth="41.60000991821289" text="STT" />
+                <TableColumn fx:id="maSvColumn" prefWidth="111.20004653930664" text="Mã sinh viên" />
+                <TableColumn fx:id="hoTenColumn" prefWidth="162.40000915527344" text="Họ và tên" />
+                <TableColumn fx:id="gioiTinhColumn" prefWidth="66.39996337890625" text="Giới tính" />
+                <TableColumn fx:id="ngaySinhColumn" prefWidth="76.79998779296875" text="Ngày sinh" />
+                <TableColumn  minWidth="0.0" prefWidth="0.0" text="C2" />
+                <TableColumn fx:id="diachiColumn" prefWidth="78.4000244140625" text="Địa chỉ" />
+                <TableColumn fx:id="soDienThoaiColumn" prefWidth="102.39996337890625" text="Số điện thoại" />
+                <TableColumn fx:id="emailColumn" prefWidth="112.79998779296875" text="Email" />
+            </columns>
+        </TableView>
+        <Button fx:id="searchByMaLop" layoutX="205.0" layoutY="111.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="82.0" text="Tìm kiếm" />
+    </children>
 </AnchorPane>

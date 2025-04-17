@@ -11,4 +11,7 @@ public interface IUserDAO {
     void updateSV(User user);
     void deleteSV(String maSV);
     List<User> findByClassId(String maLop);
+    User login(String username, String password);
+    int count();
+    void updateAnh(String url, String maSV);
 }

@@ -46,7 +46,6 @@ public class QLLHAdminController {
     private TableColumn<Lop, String> colMaMH;
     private ObservableList<Lop> lopList;
     ILopDAO dao = new LopDAO();
-    IMonHoc daoMH = new MonHocDAO();
 
     @FXML
     private void initialize(){

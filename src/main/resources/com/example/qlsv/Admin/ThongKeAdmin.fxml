@@ -6,22 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.AdminController.QLTKController">
    <children>
       <Label layoutX="256.0" layoutY="20.0" text="Thống kê báo cáo">
          <font>
             <Font name="Arial Bold" size="27.0" />
          </font>
       </Label>
-      <TableView layoutX="5.0" layoutY="77.0" prefHeight="402.0" prefWidth="787.0">
+      <TableView fx:id="tblLop" layoutX="5.0" layoutY="77.0" prefHeight="402.0" prefWidth="787.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="STT" />
-          <TableColumn prefWidth="75.0" text="Mã lớp" />
-            <TableColumn prefWidth="175.9999237060547" text="Tên lớp" />
-            <TableColumn prefWidth="194.4000244140625" text="Tên giảng viên" />
-            <TableColumn prefWidth="118.4000244140625" text="Mã môn" />
-            <TableColumn prefWidth="148.7999267578125" text="Xem báo cáo" />
+          <TableColumn fx:id="colSTT" prefWidth="75.0" text="STT" />
+          <TableColumn fx:id="colMaLop" prefWidth="75.0" text="Mã lớp" />
+            <TableColumn fx:id="colTenLop" prefWidth="175.9999237060547" text="Tên lớp" />
+            <TableColumn fx:id="colDiaDiem" prefWidth="88.79998779296875" text="Địa điểm" />
+            <TableColumn fx:id="colMaMH" prefWidth="127.199951171875" text="Mã môn" />
+            <TableColumn fx:id="colThoiGian" prefWidth="123.99993896484375" text="Thời gian học" />
+            <TableColumn fx:id="colTK" prefWidth="119.9999877929688" text="Xem thống kê" />
         </columns>
       </TableView>
    </children>

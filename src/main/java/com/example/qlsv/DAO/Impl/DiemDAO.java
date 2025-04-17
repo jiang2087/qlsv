@@ -27,8 +27,29 @@ public class DiemDAO extends AbstractDAO<Diem> implements IDiemDAO {
         return list.isEmpty() ? null : list.get(0);
     }
 
+    @Override
+    public List<Diem> findByMaSV(String maSV) {
+        String query = """
+                SELECT diemTX1, diemTX2, diemGiuaKy, diemCuoiKy, diemTichLuy, xepLoai, maSV, maLop, maMH FROM diem
+                WHERE maSV=?;
+                """;
+        return query(query, new DiemMapper(), maSV);
+    }
+
+    @Override
+    public void updateDiem(Diem diem) {
+        String query = """
+                UPDATE diem SET diemTX1=?, diemTX2=?, diemGiuaKy=?, diemCuoiKy=?, diemTichLuy=? 
+                WHERE maSV=? and maLop =?;
+                """;
+        update(query, diem.getDiemTX1(), diem.getDiemTX2(), diem.getDiemGiuaKy(), diem.getDiemCuoiKy(),
+                diem.getDiemTichLuy(), diem.getMaSV(), diem.getMaLop());
+    }
+
+
     public static void main(String[] args) {
         IDiemDAO dao = new DiemDAO();
-        dao.findOneByClass("asd", "asd");
+        List<Diem> diem = dao.findAllInClass("1");
+        System.out.println(diem.get(0));
     }
 }

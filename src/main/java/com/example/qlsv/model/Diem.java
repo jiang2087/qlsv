@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Diem {
-    private float diemTX1;
-    private float diemTX2;
-    private float diemcuoiKy;
-    private float diemGiuaKy;
-    private float diemTichLuy;
+    private Float diemTX1;
+    private Float diemTX2;
+    private Float diemCuoiKy;
+    private Float diemGiuaKy;
+    private Float diemTichLuy;
     private String xepLoai;
     private String maSV;
     private String maLop;

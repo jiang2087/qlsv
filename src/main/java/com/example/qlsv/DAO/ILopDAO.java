@@ -10,4 +10,6 @@ public interface ILopDAO {
     void updateLop(Lop lop);
     void deleteLop(String maLop);
     void addLop(Lop lop);
+    List<Lop> findByMaSV(String maSV);
+    int count();
 }
